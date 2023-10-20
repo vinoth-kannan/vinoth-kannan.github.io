@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="icon.png">
+    <title>CGPA Calculator</title>
+</head>
+
+<body>
+    <header class="content is-small is-mobile">
+        <h1><div id="log"><img src="./icon.png" height="100px" width="100px"></div><b>CGPA/GPA Calculator</b></h1>
+        <ul>
+            <li>
+                <p>All the fields are mandatory to enable the "Calculate" Button</p>
+            </li>
+            <li class="cgpaNote">
+                <p>For CGPA section,</p>
+
+                <a href="explanation.html" class="button is-link is-small is-outlined is-inverted">Refer this link for
+                    explanation</a>
+
+            </li>
+            <li class="gpaNote">
+                <p>In GPA Section,</p>
+                <ul>
+                    <li>
+                        <p>Incase of any backlogs, select "U grade" and enter it's respective credits</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <div class="box" id="outerbox">
+        <div class="columns is-mobile is-vcentered is-centered block">
+            <div class="columns is-mobile is-vcentered is-centered block" id="radio">
+                <b class="column is-8">What do you want to Calculate?</b>
+
+                <div class="column tabs is-small is-toggle is-toggle-rounded">
+                    <ul id="tabs">
+                        <li><a id="cgpaButton">CGPA</a></li>
+                        <li><a id="gpaButton">GPA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class='cgpa block'>
+            <div class="columns is-mobile is-vcentered is-centered block">
+                <b class="column is-6">Upto which Semester</b>
+                <div class="select is-small is-info is-rounded">
+                    <select name="semestersCompleted">
+                        <option value="0" style="display: none">?</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="columns is-mobile is-vcentered is-centered block" id="cgpaTable">
+                <table>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="gpa block">
+            <div class="columns is-mobile is-vcentered is-centered block">
+                <b class="column is-6">Total number of subjects in the semester</b>
+                <input class="column is-4 is-small input is-rounded is-normal is-info" type="text"
+                    placeholder="No. of Subjects Passed" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+            </div>
+
+            <div class="columns is-mobile is-vcentered is-centered block" id="gpaTable">
+                <table>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </div>
+</body>
+
+</html>
